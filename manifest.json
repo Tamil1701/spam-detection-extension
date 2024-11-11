@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Floating Spam Detector",
+    "version": "1.0",
+    "description": "A draggable, floating iframe for spam detection tool.",
+    "permissions": ["activeTab", "scripting", "storage"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["iframe-style.css"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }
+  

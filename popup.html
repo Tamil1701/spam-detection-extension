@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spam Detector Control</title>
+  <style>
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    #toggleSwitch {
+      width: 40px;
+      height: 20px;
+      background-color: #ccc;
+      position: relative;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    #toggleSwitch.active {
+      background-color: #4caf50;
+    }
+    #toggleSwitch::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.3s;
+      top: 1px;
+      left: 1px;
+    }
+    #toggleSwitch.active::before {
+      left: 21px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Enable Floating Spam Detector</h2>
+  <div class="toggle-container">
+    <label for="toggleSwitch">Activate Extension:</label>
+    <div id="toggleSwitch"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
